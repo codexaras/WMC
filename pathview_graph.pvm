@@ -1,0 +1,156 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created": "2026-10-30T17:30:20.997Z",
+    "modified": "2026-10-30T17:30:20.997Z",
+    "name": "pathview_graph"
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "d495be2b-25b3-46bf-b99e-0652ac26d0cf",
+        "type": "SinusoidalSource",
+        "name": "SinusoidalSource",
+        "position": {
+          "x": 600,
+          "y": 370
+        },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "d495be2b-25b3-46bf-b99e-0652ac26d0cf-output-0",
+            "nodeId": "d495be2b-25b3-46bf-b99e-0652ac26d0cf",
+            "name": "out",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {}
+      },
+      {
+        "id": "07eca4b0-a34c-4e26-97ea-f8d629a22304",
+        "type": "WhiteNoise",
+        "name": "WhiteNoise",
+        "position": {
+          "x": 600,
+          "y": 480
+        },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "07eca4b0-a34c-4e26-97ea-f8d629a22304-output-0",
+            "nodeId": "07eca4b0-a34c-4e26-97ea-f8d629a22304",
+            "name": "out",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "standard_deviation": "0.0"
+        }
+      },
+      {
+        "id": "34b00250-1ee8-4548-874b-c049b4f32970",
+        "type": "Adder",
+        "name": "Adder",
+        "position": {
+          "x": 840,
+          "y": 370
+        },
+        "inputs": [
+          {
+            "id": "34b00250-1ee8-4548-874b-c049b4f32970-input-0",
+            "nodeId": "34b00250-1ee8-4548-874b-c049b4f32970",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          },
+          {
+            "id": "34b00250-1ee8-4548-874b-c049b4f32970-input-1",
+            "nodeId": "34b00250-1ee8-4548-874b-c049b4f32970",
+            "name": "in 1",
+            "direction": "input",
+            "index": 1,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "34b00250-1ee8-4548-874b-c049b4f32970-output-0",
+            "nodeId": "34b00250-1ee8-4548-874b-c049b4f32970",
+            "name": "out",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {}
+      },
+      {
+        "id": "af8a6c7e-8d52-4a46-ad0e-77f96e9b9426",
+        "type": "Scope",
+        "name": "Scope",
+        "position": {
+          "x": 980,
+          "y": 370
+        },
+        "inputs": [
+          {
+            "id": "af8a6c7e-8d52-4a46-ad0e-77f96e9b9426-input-0",
+            "nodeId": "af8a6c7e-8d52-4a46-ad0e-77f96e9b9426",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "e9f21ff9-08a2-443d-b846-d234f550b8cd",
+        "sourceNodeId": "d495be2b-25b3-46bf-b99e-0652ac26d0cf",
+        "sourcePortIndex": 0,
+        "targetNodeId": "34b00250-1ee8-4548-874b-c049b4f32970",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "b9328e3e-e0c2-4bc8-b2fd-35b8c3ef9683",
+        "sourceNodeId": "07eca4b0-a34c-4e26-97ea-f8d629a22304",
+        "sourcePortIndex": 0,
+        "targetNodeId": "34b00250-1ee8-4548-874b-c049b4f32970",
+        "targetPortIndex": 1
+      },
+      {
+        "id": "195a6c3b-b4b8-4ef2-8cab-e9cf620ffbae",
+        "sourceNodeId": "34b00250-1ee8-4548-874b-c049b4f32970",
+        "sourcePortIndex": 0,
+        "targetNodeId": "af8a6c7e-8d52-4a46-ad0e-77f96e9b9426",
+        "targetPortIndex": 0
+      }
+    ],
+    "annotations": []
+  },
+  "events": [],
+  "codeContext": {
+    "code": ""
+  },
+  "simulationSettings": {
+    "duration": null,
+    "dt": null,
+    "solver": "SSPRK22",
+    "adaptive": true,
+    "atol": null,
+    "rtol": null,
+    "ftol": null,
+    "dt_min": null,
+    "dt_max": null,
+    "ghostTraces": 0,
+    "plotResults": true
+  }
+}
